@@ -1,0 +1,190 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+@import "tailwindcss";
+
+:root {
+  /* 메인 색상 */
+  --color-primary: #4A90D9;
+  --color-primary-light: #6BA5E7;
+  --color-primary-dark: #3A7BC8;
+  --color-primary-bg: #E8F0FE;
+
+  /* 보조 색상 */
+  --color-secondary: #5CC6BA;
+
+  /* 활성/비활성 */
+  --color-active: #4A90D9;
+  --color-inactive: #B0BEC5;
+
+  /* 텍스트 */
+  --color-text-primary: #111;
+  --color-text-secondary: #546E7A;
+  --color-text-tertiary: #90A4AE;
+
+  /* 배경 */
+  --color-background: #ffffff;
+  --color-background-white: #FFFFFF;
+  --color-background-card: #FFFFFF;
+
+  /* 보더 */
+  --color-border: #E0E6ED;
+  --color-border-light: #F0F2F5;
+
+  /* 상태 */
+  --color-success: #4CAF50;
+  --color-warning: #FF9800;
+  --color-danger: #F44336;
+
+  /* 간격 */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 20px;
+  --spacing-xxl: 24px;
+  --spacing-xxl2: 28px;
+  --spacing-xxl3: 50px;
+
+  /* 보더 라디우스 */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-card: 16px;
+  --radius-button: 12px;
+  --radius-full: 9999px;
+
+  /* 폰트 크기 */
+  --font-xs: 11px;
+  --font-sm: 13px;
+  --font-md: 14px;
+  --font-base: 15px;
+  --font-lg: 16px;
+  --font-xl: 18px;
+  --font-xxl: 20px;
+  --font-title: 22px;
+  --font-hero: 28px;
+  --font-hero2: 40px;
+
+  /* 그림자 */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.06);
+  --shadow-tabbar: 0 -2px 8px rgba(0, 0, 0, 0.04);
+
+  /* 레이아웃 */
+  --max-width: 430px;
+  --header-height: 56px;
+  --tabbar-height: 80px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--color-background);
+  color: var(--color-text-primary);
+  font-size: var(--font-base);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  outline: none;
+}
+
+/* 스크롤바 숨기기 (모바일 앱 느낌) */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* 모바일 앱 래퍼 */
+.app-wrapper {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  min-height: 100vh;
+  background: var(--color-background-white);
+  position: relative;
+}
+
+/* 페이지 컨테이너 (헤더 + 탭바 고려) */
+.page-container {
+  padding-top: var(--spacing-xxl);
+  padding-bottom: var(--tabbar-height);
+  min-height: 100vh;
+}
+
+/* 페이지 컨테이너 (탭바 없는 경우) */
+.page-container-no-tab {
+  padding-top: 0;
+  min-height: 100vh;
+}
+
+/* 섹션 제목 */
+.section-title {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* 카드 기본 스타일 */
+.card {
+  background: var(--color-background-card);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: var(--spacing-xl);
+}
+
+/* 태그 스타일 */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-sm);
+  font-weight: 500;
+}
+
+.tag-primary {
+  background: var(--color-primary-bg);
+  color: var(--color-primary);
+}
+
+.tag-success {
+  background: #E8F5E9;
+  color: var(--color-success);
+}
+
+.tag-warning {
+  background: #FFF3E0;
+  color: var(--color-warning);
+}
+
+.tag-danger {
+  background: #FFEBEE;
+  color: var(--color-danger);
+}
