@@ -223,7 +223,7 @@ const treatmentsData: Record<string, TreatmentData> = {
     },
   },
   'root-canal': {
-    id: 'root-canal',
+    id: 'rootcanal',
     name: '신경치료',
     emoji: '🩺',
     color: '#F44336',
