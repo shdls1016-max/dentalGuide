@@ -16,6 +16,8 @@ const treatmentItems = [
   { id: 'inlay', label: '인레이', color: '#E8F5E9', accent: '#66BB6A' },
   { id: 'rootcanal', label: '신경치료', color: '#FFF3E0', accent: '#FFA726' },
   { id: 'crown', label: '크라운', color: '#FCE4EC', accent: '#EF5350' },
+  { id: 'extraction', label: '발치', color: '#FCE4EC', accent: '#EF5350' },
+  { id: 'implant', label: '임플란트', color: '#FCE4EC', accent: '#EF5350' },
 ];
 
 /* ────────────────────────────────────────
@@ -67,14 +69,15 @@ export default function HomePage() {
           <section
             style={{
               background: 'linear-gradient(135deg, #78a5e9 0%, #6192DA 100%)',
-              /* borderRadius: 'var(--radius-xl)', */
               padding: '28px 24px',
-              /* marginTop: 'var(--spacing-lg)', */
               position: 'relative',
               overflow: 'hidden',
               minHeight: 243,
               display: 'flex',
               justifyContent: 'space-between',
+
+              marginLeft:-20,
+              marginRight:-20
             }}
           >
 
@@ -152,39 +155,6 @@ export default function HomePage() {
                 }}
               />
 
-              
-              {/* Phone shape */}
-{/*               <div
-                style={{
-                  width: 62,
-                  height: 100,
-                  borderRadius: 14,
-                  background: 'rgba(255,255,255,0.18)',
-                  border: '2px solid rgba(255,255,255,0.3)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  flexDirection: 'column',
-                  gap: 4,
-                }}
-              >
-                {/* Tooth icon inside phone */}
-{/*                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M12 2C10.08 2 8.5 2.74 7.5 4.2C6.78 3.3 5.58 2.6 4 2.6C4 6.6 5.5 9 7.5 11.5C5 14.5 4 17 4 20H7.5C7.5 17.5 8.8 15 12 13.5C15.2 15 16.5 17.5 16.5 20H20C20 17 19 14.5 16.5 11.5C18.5 9 20 6.6 20 2.6C18.42 2.6 17.22 3.3 16.5 4.2C15.5 2.74 13.92 2 12 2Z"
-                    fill="rgba(255,255,255,0.9)"
-                  />
-                </svg>
-                <div
-                  style={{
-                    width: 20,
-                    height: 3,
-                    borderRadius: 2,
-                    background: 'rgba(255,255,255,0.4)',
-                  }}
-                />
-              </div>  */}
-
             </div>
           </section>
 
@@ -194,7 +164,7 @@ export default function HomePage() {
             style={{
               marginTop: 'var(--spacing-xl)',
               background: 'var(--color-background-white)',
-              borderRadius: 'var(--radius-card)',
+              borderRadius: 'var(--radius-md)',
               boxShadow: 'var(--shadow-card)',
               padding: '18px 20px',
               display: 'flex',
@@ -202,55 +172,45 @@ export default function HomePage() {
               gap: 14,
               cursor: 'pointer',
               transition: 'box-shadow 0.2s ease',
+              border:'1px solid var(--color-border-light)'
             }}
           >
             {/* Shield / tooth icon */}
             <div
               style={{
-                width: 44,
-                height: 44,
-                borderRadius: 'var(--radius-lg)',
-                background: 'var(--color-primary-bg)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
+                width: 40,
+                height: 40,
+                borderRadius: '50%',
+                overflow: 'hidden',
                 flexShrink: 0,
+                background:'#fafafa'
               }}
             >
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
-                  fill="var(--color-primary)"
-                  opacity="0.2"
-                  stroke="var(--color-primary)"
-                  strokeWidth="2"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M9 12l2 2 4-4"
-                  stroke="var(--color-primary)"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <Image
+                src="/recentLogo.png"
+                alt="최근방문치과로고"
+                width={40}
+                height={40}
+                style={{ width: '60%', height: 'auto', objectFit: 'cover', objectPosition:'ceneter' }}
+              />
+              
             </div>
 
             {/* Text */}
             <div style={{ flex: 1 }}>
               <p
                 style={{
-                  fontSize: 'var(--font-sm)',
-                  color: 'var(--color-text-tertiary)',
-                  fontWeight: 500,
+                  fontSize: 'var(--font-xxl)',
+                  color: 'var(--color-text-primary)',
+                  fontWeight: 400,
                   marginBottom: 2,
                 }}
               >
                 최근 방문치과
               </p>
-              <p style={{ fontSize: 'var(--font-xl)', fontWeight: 700, color: 'var(--color-text-primary)' }}>
-                <span style={{ fontSize: 'var(--font-hero)', color: 'var(--color-primary)' }}>180</span>
-                <span style={{ fontSize: 'var(--font-md)', fontWeight: 500, color: 'var(--color-text-secondary)', marginLeft: 4 }}>
+              <p style={{ fontSize: 'var(--font-xl)', color: 'var(--color-text-primary)' }}>
+                <span style={{ fontSize: 'var(--font-hero2)', color: 'var(--color-text-primary)', fontWeight: 300 }}>180</span>
+                <span style={{ fontSize: 'var(--font-md)', fontWeight: 300, color: 'var(--color-text-primary)', marginLeft: 4 }}>
                   일 경과
                 </span>
               </p>
@@ -266,8 +226,8 @@ export default function HomePage() {
           <section style={{ marginTop: 'var(--spacing-xxl)' }}>
             <h3
               style={{
-                fontSize: 'var(--font-xl)',
-                fontWeight: 700,
+                fontSize: 'var(--font-xxl)',
+                fontWeight: 500,
                 color: 'var(--color-text-primary)',
                 marginBottom: 'var(--spacing-lg)',
               }}
@@ -312,14 +272,7 @@ export default function HomePage() {
                       transition: 'transform 0.2s ease',
                     }}
                   >
-                    {/* Tooth mini icon */}
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                      <path
-                        d="M12 2C10.08 2 8.5 2.74 7.5 4.2C6.78 3.3 5.58 2.6 4 2.6C4 6.6 5.5 9 7.5 11.5C5 14.5 4 17 4 20H7.5C7.5 17.5 8.8 15 12 13.5C15.2 15 16.5 17.5 16.5 20H20C20 17 19 14.5 16.5 11.5C18.5 9 20 6.6 20 2.6C18.42 2.6 17.22 3.3 16.5 4.2C15.5 2.74 13.92 2 12 2Z"
-                        fill={item.accent}
-                        opacity="0.85"
-                      />
-                    </svg>
+                    
                   </div>
                   <span
                     style={{
@@ -336,7 +289,7 @@ export default function HomePage() {
           </section>
 
           {/* ── Magazine Section ── */}
-          <section style={{ marginTop: 'var(--spacing-xxl)' }}>
+          <section style={{ marginTop: 'var(--spacing-xxl3)', marginBottom:'var(--spacing-xxl3)' }}>
             <div
               style={{
                 display: 'flex',
@@ -347,8 +300,8 @@ export default function HomePage() {
             >
               <h3
                 style={{
-                  fontSize: 'var(--font-xl)',
-                  fontWeight: 700,
+                  fontSize: 'var(--font-xxl)',
+                  fontWeight: 500,
                   color: 'var(--color-text-primary)',
                 }}
               >
@@ -357,9 +310,9 @@ export default function HomePage() {
               <button
                 onClick={() => router.push('/magazine')}
                 style={{
-                  fontSize: 'var(--font-sm)',
-                  color: 'var(--color-text-tertiary)',
-                  fontWeight: 500,
+                  fontSize: 'var(--font-md)',
+                  color: 'var(--color-text-primary)',
+                  fontWeight: 300,
                   background: 'none',
                   border: 'none',
                   cursor: 'pointer',
@@ -372,7 +325,7 @@ export default function HomePage() {
             <div
               style={{
                 display: 'flex',
-                gap: 12,
+                gap: 10,
                 overflowX: 'auto',
                 paddingBottom: 8,
                 scrollbarWidth: 'none',
@@ -389,7 +342,7 @@ export default function HomePage() {
                   style={{
                     flexShrink: 0,
                     width: 200,
-                    borderRadius: 'var(--radius-lg)',
+                    borderRadius: 'var(--radius-md)',
                     overflow: 'hidden',
                     cursor: 'pointer',
                     boxShadow: 'var(--shadow-sm)',
@@ -410,21 +363,11 @@ export default function HomePage() {
                     }}
                   >
                     {/* Decorative circle */}
-                    <div
-                      style={{
-                        position: 'absolute',
-                        top: 12,
-                        right: 12,
-                        width: 36,
-                        height: 36,
-                        borderRadius: '50%',
-                        background: 'rgba(255,255,255,0.2)',
-                      }}
-                    />
+                   
                     <span
                       style={{
                         fontSize: 'var(--font-xs)',
-                        fontWeight: 600,
+                        fontWeight: 500,
                         color: 'white',
                         background: 'rgba(0,0,0,0.2)',
                         padding: '3px 10px',

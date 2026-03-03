@@ -42,7 +42,8 @@
   --spacing-xl: 20px;
   --spacing-xxl: 24px;
   --spacing-xxl2: 28px;
-  --spacing-xxl3: 50px;
+  --spacing-xxl3: 36px;
+  --spacing-xxl4: 50px;
 
   /* 보더 라디우스 */
   --radius-sm: 4px;
@@ -67,8 +68,8 @@
 
   /* 그림자 */
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.08);
-  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.06);
   --shadow-tabbar: 0 -2px 8px rgba(0, 0, 0, 0.04);
 
   /* 레이아웃 */
