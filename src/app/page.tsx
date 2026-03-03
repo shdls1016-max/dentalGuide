@@ -112,7 +112,7 @@ export default function HomePage() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 6,
-                  padding: '12px 15px',
+                  padding: '12px 16px',
                   background: '#FFFFFF',
                   color: 'var(--color-text-primary)',
                   fontWeight: 300,
@@ -168,30 +168,34 @@ export default function HomePage() {
               boxShadow: 'var(--shadow-card)',
               padding: '18px 20px',
               display: 'flex',
-              alignItems: 'center',
+              alignItems: 'start',
               gap: 14,
               cursor: 'pointer',
               transition: 'box-shadow 0.2s ease',
-              border:'1px solid var(--color-border-light)'
+              border:'1px solid var(--color-border)'
             }}
           >
             {/* Shield / tooth icon */}
             <div
               style={{
-                width: 40,
-                height: 40,
+                width: 48,
+                height: 48,
                 borderRadius: '50%',
                 overflow: 'hidden',
                 flexShrink: 0,
-                background:'#fafafa'
+                background:'#fafafa',
+                display: 'flex', 
+                alignItems: 'center', 
+                justifyContent: 'center', 
+                marginTop:-8
               }}
             >
               <Image
                 src="/recentLogo.png"
                 alt="최근방문치과로고"
-                width={40}
-                height={40}
-                style={{ width: '60%', height: 'auto', objectFit: 'cover', objectPosition:'ceneter' }}
+                width={48}
+                height={48}
+                style={{ width: '60%', height: 'auto', objectFit: 'contain'}}
               />
               
             </div>
@@ -217,13 +221,13 @@ export default function HomePage() {
             </div>
 
             {/* Arrow */}
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-tertiary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-secondary)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="9 18 15 12 9 6" />
             </svg>
           </section>
 
           {/* ── Treatment Info Section ── */}
-          <section style={{ marginTop: 'var(--spacing-xxl)' }}>
+          <section style={{ marginTop: 'var(--spacing-xxl3)' }}>
             <h3
               style={{
                 fontSize: 'var(--font-xxl)',
@@ -243,6 +247,9 @@ export default function HomePage() {
                 paddingBottom: 4,
                 scrollbarWidth: 'none',
                 msOverflowStyle: 'none',
+                WebkitOverflowScrolling: 'touch',
+                touchAction: 'pan-x',  
+                userSelect: 'none',
               }}
             >
               {treatmentItems.map((item) => (
@@ -262,16 +269,24 @@ export default function HomePage() {
                 >
                   <div
                     style={{
-                      width: 64,
-                      height: 64,
-                      borderRadius: 'var(--radius-lg)',
+                      width: 68,
+                      height: 68,
+                      borderRadius: 'var(--radius-sm)',
                       background: item.color,
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       transition: 'transform 0.2s ease',
+                      overflow: 'hidden', 
+                      position: 'relative',
                     }}
                   >
+
+                   <Image
+                      src={`/${item.id}.jpg`} alt={item.label}
+                      fill
+                      style={{ objectFit: 'cover', objectPosition: 'center' }}
+                    /> 
                     
                   </div>
                   <span

@@ -61,7 +61,7 @@ export default function Header({
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
-      padding: '0 var(--spacing-lg)',
+      padding: '0 var(--spacing-xl)',
       background: 'var(--color-background-white)',
       borderBottom: '1px solid var(--color-border-light)',
       zIndex: 200,
@@ -91,9 +91,9 @@ export default function Header({
     },
     logoText: {
       fontSize: 'var(--font-lg)',
-      fontWeight: 700,
+      fontWeight: 600,
       color: 'var(--color-text-primary)',
-      letterSpacing: '-0.3px',
+      letterSpacing: '-0.25px',
     },
     centerTitle: {
       position: 'absolute' as const,
@@ -162,12 +162,12 @@ export default function Header({
           </button>
         ) : (
           <div style={styles.logoContainer}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            {/* <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path
                 d="M12 2C9.5 2 7.5 3.5 7 5.5C6.5 7.5 5.5 9 4.5 11C3.5 13 3 15 4 17C5 19 6 21 8 21C9 21 10 20 10.5 18.5C11 17 11.5 16 12 16C12.5 16 13 17 13.5 18.5C14 20 15 21 16 21C18 21 19 19 20 17C21 15 20.5 13 19.5 11C18.5 9 17.5 7.5 17 5.5C16.5 3.5 14.5 2 12 2Z"
                 fill="var(--color-primary)"
               />
-            </svg>
+            </svg> */}
             <span style={styles.logoText}>DENTAL GUIDE</span>
           </div>
         )}
