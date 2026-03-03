@@ -63,7 +63,7 @@ const treatmentsData: Record<string, TreatmentData> = {
     id: 'scaling',
     name: '스케일링',
     emoji: '🪥',
-    color: '#4A90D9',
+    color: '#6192DA',
     shortDesc: '치석과 치태를 제거하여 잇몸 건강을 지키는 기본 치료입니다.',
     calmingText:
       '많은 분들이 스케일링 통증을 걱정하시지만, 실제로는 약간의 시린 느낌 정도입니다. 대부분의 환자분들이 "생각보다 안 아팠다"고 말씀하십니다. 치석이 많이 쌓인 경우 초음파 기구의 진동이 느껴질 수 있으나, 참을 수 없는 수준은 아닙니다.',
@@ -148,7 +148,7 @@ const treatmentsData: Record<string, TreatmentData> = {
     id: 'resin',
     name: '레진',
     emoji: '🦷',
-    color: '#5CC6BA',
+    color: '#6192DA',
     shortDesc: '충치 부위를 제거하고 치아색 재료로 채우는 보존 치료입니다.',
     calmingText:
       '레진 치료는 가장 흔한 치과 치료 중 하나입니다. 마취를 하기 때문에 시술 중 통증은 거의 느끼지 못합니다. 마취 주사가 걱정되시는 분도 많지만, 표면 마취를 먼저 해주어 주사 통증도 크게 줄일 수 있습니다.',
@@ -187,7 +187,7 @@ const treatmentsData: Record<string, TreatmentData> = {
     id: 'inlay',
     name: '인레이',
     emoji: '🔶',
-    color: '#FF9800',
+    color: '#6192DA',
     shortDesc: '충치 범위가 큰 경우 정밀 맞춤 제작한 충전물로 치료합니다.',
     calmingText:
       '인레이는 레진보다 더 정밀하고 내구성이 좋은 치료입니다. 마취 하에 진행되므로 치료 중 통증 걱정은 하지 않으셔도 됩니다. 두 번 내원이 필요하지만, 그만큼 정확하게 맞춤 제작되어 오래 사용할 수 있습니다.',
@@ -222,11 +222,11 @@ const treatmentsData: Record<string, TreatmentData> = {
       revisit: ['교합이 높거나 불편한 경우', '인레이가 빠진 경우', '6개월 정기검진'],
     },
   },
-  'root-canal': {
+  'rootcanal': {
     id: 'rootcanal',
     name: '신경치료',
     emoji: '🩺',
-    color: '#F44336',
+    color: '#6192DA',
     shortDesc: '충치가 신경까지 진행된 경우 감염된 신경을 제거하는 치료입니다.',
     calmingText:
       '신경치료라는 이름 때문에 많이 무서워하시는 분들이 많습니다. 하지만 현대 치과 기술로 마취가 잘 되어 시술 중 통증은 크지 않습니다. 오히려 신경치료를 받지 않으면 염증이 악화되어 더 심한 통증이 올 수 있으므로, 제때 치료하는 것이 중요합니다.',
@@ -266,7 +266,7 @@ const treatmentsData: Record<string, TreatmentData> = {
     id: 'crown',
     name: '크라운',
     emoji: '👑',
-    color: '#9C27B0',
+    color: '#6192DA',
     shortDesc: '손상되거나 약해진 치아를 보호하기 위해 전체를 씌우는 보철 치료입니다.',
     calmingText:
       '크라운은 약해진 치아를 보호하는 가장 확실한 방법입니다. 마취 하에 치아를 다듬는 과정이 있지만, 통증은 거의 없습니다. 최종 크라운이 장착되면 자연치아와 거의 동일한 느낌으로 편안하게 사용하실 수 있습니다.',
@@ -306,7 +306,7 @@ const treatmentsData: Record<string, TreatmentData> = {
     id: 'extraction',
     name: '발치',
     emoji: '🔧',
-    color: '#607D8B',
+    color: '#6192DA',
     shortDesc: '살릴 수 없는 치아를 안전하게 뽑는 시술입니다.',
     calmingText:
       '발치라는 단어가 무서울 수 있지만, 마취가 충분히 된 상태에서 진행되므로 시술 중 통증은 거의 없습니다. 압력감은 느낄 수 있지만 아픈 것과는 다릅니다. 시술 후 관리만 잘하시면 회복도 빠릅니다.',
@@ -347,7 +347,7 @@ const treatmentsData: Record<string, TreatmentData> = {
     id: 'implant',
     name: '임플란트',
     emoji: '⚙️',
-    color: '#3F51B5',
+    color: '#6192DA',
     shortDesc: '빠진 치아 자리에 인공 치아 뿌리를 심고 보철물을 연결하는 치료입니다.',
     calmingText:
       '임플란트는 수술이라는 단어 때문에 겁이 나실 수 있지만, 마취 하에 진행되므로 시술 중 통증은 거의 없습니다. 오히려 시술 자체보다 발치가 더 아프다고 느끼시는 분들도 많습니다. 현대 임플란트 기술은 매우 발전하여 성공률이 95% 이상입니다.',
@@ -392,7 +392,7 @@ const treatmentsData: Record<string, TreatmentData> = {
     id: 'dentures',
     name: '틀니',
     emoji: '🫧',
-    color: '#00BCD4',
+    color: '#6192DA',
     shortDesc: '여러 개의 치아가 빠진 경우 탈부착식 보철물로 기능을 회복합니다.',
     calmingText:
       '틀니는 오랜 역사를 가진 안전하고 검증된 치료법입니다. 처음에는 이물감이 있을 수 있지만, 대부분 2~4주 정도 적응 기간을 거치면 편안하게 사용하실 수 있습니다. 최근 기술의 발달로 점점 더 자연스럽고 편안한 틀니가 만들어지고 있습니다.',
