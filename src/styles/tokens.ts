@@ -6,13 +6,13 @@
 
 export const colors = {
   // 메인 색상
-  primary: '#4A90D9',
-  primaryLight: '#6BA5E7',
+  primary: '#6192DA',
+  primaryLight: '#78a5e9',
   primaryDark: '#3A7BC8',
   primaryBg: '#E8F0FE',
 
   // 보조 색상
-  secondary: '#5CC6BA',
+  secondary: '#B4E2D2',
   secondaryLight: '#7DD4CA',
   secondaryDark: '#4AB0A5',
 

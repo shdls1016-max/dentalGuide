@@ -5,6 +5,8 @@ import { useRouter } from 'next/navigation';
 import Header from '@/components/Header';
 import TabBar from '@/components/TabBar';
 
+import Image from "next/image";
+
 /* ────────────────────────────────────────
    치료 정보 카드 데이터
 ──────────────────────────────────────── */
@@ -58,66 +60,44 @@ export default function HomePage() {
         onProfileClick={() => router.push('/mypage')}
       />
 
-      <main className="page-container" style={{ background: 'var(--color-background)' }}>
+      <main className="page-container" style={{ background: 'var(--color-background)', padding:'0' }}>
         <div style={{ padding: '0 var(--spacing-xl)' }}>
 
           {/* ── Hero Banner ── */}
           <section
             style={{
-              background: 'linear-gradient(135deg, #4A90D9 0%, #357ABD 50%, #2E6DB4 100%)',
-              borderRadius: 'var(--radius-xl)',
+              background: 'linear-gradient(135deg, #78a5e9 0%, #6192DA 100%)',
+              /* borderRadius: 'var(--radius-xl)', */
               padding: '28px 24px',
-              marginTop: 'var(--spacing-lg)',
+              /* marginTop: 'var(--spacing-lg)', */
               position: 'relative',
               overflow: 'hidden',
-              minHeight: 170,
+              minHeight: 243,
               display: 'flex',
               justifyContent: 'space-between',
             }}
           >
-            {/* Decorative circles */}
-            <div
-              style={{
-                position: 'absolute',
-                top: -30,
-                right: -20,
-                width: 120,
-                height: 120,
-                borderRadius: '50%',
-                background: 'rgba(255,255,255,0.08)',
-              }}
-            />
-            <div
-              style={{
-                position: 'absolute',
-                bottom: -40,
-                right: 40,
-                width: 80,
-                height: 80,
-                borderRadius: '50%',
-                background: 'rgba(255,255,255,0.06)',
-              }}
-            />
+
 
             {/* Text content */}
             <div style={{ position: 'relative', zIndex: 1, flex: 1 }}>
               <p
                 style={{
-                  fontSize: 'var(--font-sm)',
+                  fontSize: 'var(--font-md)',
                   color: 'rgba(255,255,255,0.85)',
-                  fontWeight: 500,
-                  marginBottom: 8,
+                  fontWeight: 300,
+                  marginBottom: 3,
                 }}
               >
                 지금 치과 가야 할까?
               </p>
               <h2
                 style={{
-                  fontSize: 'var(--font-xxl)',
-                  fontWeight: 700,
+                  fontSize: 'var(--font-title)',
+                  fontWeight: 500,
                   color: '#FFFFFF',
                   lineHeight: 1.35,
-                  marginBottom: 18,
+                  marginBottom: 46,
                   whiteSpace: 'pre-line',
                 }}
               >
@@ -129,15 +109,15 @@ export default function HomePage() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 6,
-                  padding: '10px 20px',
+                  padding: '12px 15px',
                   background: '#FFFFFF',
-                  color: 'var(--color-primary)',
-                  fontWeight: 600,
-                  fontSize: 'var(--font-md)',
+                  color: 'var(--color-text-primary)',
+                  fontWeight: 300,
+                  fontSize: 'var(--font-lg)',
                   borderRadius: 'var(--radius-full)',
                   border: 'none',
                   cursor: 'pointer',
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
+                  boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
                   transition: 'transform 0.2s ease',
                 }}
               >
@@ -151,7 +131,7 @@ export default function HomePage() {
               style={{
                 position: 'relative',
                 zIndex: 1,
-                width: 100,
+                width: 140,
                 minHeight: 120,
                 display: 'flex',
                 alignItems: 'center',
@@ -159,8 +139,22 @@ export default function HomePage() {
                 flexShrink: 0,
               }}
             >
+
+              <Image
+                src="/pageHero.png"
+                alt="샘플"
+                width={185}
+                height={211}
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  maxWidth: "400px",
+                }}
+              />
+
+              
               {/* Phone shape */}
-              <div
+{/*               <div
                 style={{
                   width: 62,
                   height: 100,
@@ -175,7 +169,7 @@ export default function HomePage() {
                 }}
               >
                 {/* Tooth icon inside phone */}
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+{/*                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
                   <path
                     d="M12 2C10.08 2 8.5 2.74 7.5 4.2C6.78 3.3 5.58 2.6 4 2.6C4 6.6 5.5 9 7.5 11.5C5 14.5 4 17 4 20H7.5C7.5 17.5 8.8 15 12 13.5C15.2 15 16.5 17.5 16.5 20H20C20 17 19 14.5 16.5 11.5C18.5 9 20 6.6 20 2.6C18.42 2.6 17.22 3.3 16.5 4.2C15.5 2.74 13.92 2 12 2Z"
                     fill="rgba(255,255,255,0.9)"
@@ -189,27 +183,8 @@ export default function HomePage() {
                     background: 'rgba(255,255,255,0.4)',
                   }}
                 />
-              </div>
-              {/* Small floating plus */}
-              <div
-                style={{
-                  position: 'absolute',
-                  top: 10,
-                  right: 5,
-                  width: 22,
-                  height: 22,
-                  borderRadius: '50%',
-                  background: 'rgba(255,255,255,0.25)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: 14,
-                  color: 'white',
-                  fontWeight: 700,
-                }}
-              >
-                +
-              </div>
+              </div>  */}
+
             </div>
           </section>
 

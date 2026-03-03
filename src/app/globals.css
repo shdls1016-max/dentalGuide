@@ -3,13 +3,13 @@
 
 :root {
   /* 메인 색상 */
-  --color-primary: #4A90D9;
-  --color-primary-light: #6BA5E7;
+  --color-primary: #6192DA;
+  --color-primary-light: #78a5e9;
   --color-primary-dark: #3A7BC8;
   --color-primary-bg: #E8F0FE;
 
   /* 보조 색상 */
-  --color-secondary: #5CC6BA;
+  --color-secondary: #B4E2D2;
 
   /* 활성/비활성 */
   --color-active: #4A90D9;
