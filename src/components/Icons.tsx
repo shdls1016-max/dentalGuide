@@ -12,11 +12,11 @@ export function HomeIcon({ size = 24, color = 'currentColor', style }: IconProps
       <path
         d="M3 9L12 2L21 9V20C21 20.55 20.55 21 20 21H15V14H9V21H4C3.45 21 3 20.55 3 20V9Z"
         stroke={color}
-        strokeWidth="2"
+        strokeWidth="1.6"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <polyline points="9 21 9 14 15 14 15 21" stroke={color} strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+      <polyline points="9 21 9 14 15 14 15 21" stroke={color} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -28,11 +28,11 @@ export function HomeFilledIcon({ size = 24, color = 'currentColor', style }: Ico
         d="M3 9L12 2L21 9V20C21 20.55 20.55 21 20 21H15V14H9V21H4C3.45 21 3 20.55 3 20V9Z"
         fill={color}
         stroke={color}
-        strokeWidth="2"
+        strokeWidth="1.6"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <polyline points="9 21 9 14 15 14 15 21" stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+      <polyline points="9 21 9 14 15 14 15 21" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
