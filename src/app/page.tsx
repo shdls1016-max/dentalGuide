@@ -1,11 +1,12 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Header from '@/components/Header';
 import TabBar from '@/components/TabBar';
 
 import Image from "next/image";
+
 
 /* ────────────────────────────────────────
    치료 정보 카드 데이터
@@ -44,10 +45,45 @@ const magazineItems = [
   },
 ];
 
+
+/* ────────────────────────────────────────
+   컨텐츠 pc에서 가로스크롤 가능하게
+──────────────────────────────────────── */
+const useDragScroll = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
+
+  const onMouseDown = (e: React.MouseEvent) => {
+    isDragging.current = true;
+    startX.current = e.pageX - (ref.current?.offsetLeft ?? 0);
+    scrollLeft.current = ref.current?.scrollLeft ?? 0;
+  };
+  const onMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging.current) return;
+    e.preventDefault();
+    const x = e.pageX - (ref.current?.offsetLeft ?? 0);
+    const walk = (x - startX.current) * 2.5; // 배율 높이면 더 빠르게
+    if (ref.current) ref.current.scrollLeft = scrollLeft.current - walk;
+  };
+  const onMouseUp = () => {
+     isDragging.current = false; 
+     if (ref.current) ref.current.style.cursor = 'grab';
+    };
+
+  return { ref, onMouseDown, onMouseMove, onMouseLeave: onMouseUp, onMouseUp };
+};
+
+
+
 /* ────────────────────────────────────────
    Home Page
 ──────────────────────────────────────── */
 export default function HomePage() {
+  const treatmentScroll = useDragScroll();
+  const magazineScroll = useDragScroll();
+
   const router = useRouter();
   const [showNotification, setShowNotification] = useState(true);
 
@@ -75,9 +111,10 @@ export default function HomePage() {
               minHeight: 243,
               display: 'flex',
               justifyContent: 'space-between',
+              userSelect: 'none',
 
               marginLeft:-20,
-              marginRight:-20
+              marginRight:-20,
             }}
           >
 
@@ -148,6 +185,7 @@ export default function HomePage() {
                 alt="샘플"
                 width={185}
                 height={211}
+                draggable="false"
                 style={{
                   width: "100%",
                   height: "auto",
@@ -177,6 +215,7 @@ export default function HomePage() {
           >
             {/* Shield / tooth icon */}
             <div
+              draggable="false"
               style={{
                 width: 48,
                 height: 48,
@@ -191,11 +230,12 @@ export default function HomePage() {
               }}
             >
               <Image
+                draggable="false"
                 src="/recentLogo.png"
                 alt="최근방문치과로고"
                 width={48}
                 height={48}
-                style={{ width: '60%', height: 'auto', objectFit: 'contain'}}
+                style={{ width: '60%', height: 'auto', objectFit: 'contain', userSelect: 'none'}}
               />
               
             </div>
@@ -208,11 +248,12 @@ export default function HomePage() {
                   color: 'var(--color-text-primary)',
                   fontWeight: 400,
                   marginBottom: 2,
+                  userSelect: 'none',
                 }}
               >
                 최근 방문치과
               </p>
-              <p style={{ fontSize: 'var(--font-xl)', color: 'var(--color-text-primary)' }}>
+              <p style={{ fontSize: 'var(--font-xl)', color: 'var(--color-text-primary)', userSelect: 'none' }}>
                 <span style={{ fontSize: 'var(--font-hero2)', color: 'var(--color-text-primary)', fontWeight: 300 }}>180</span>
                 <span style={{ fontSize: 'var(--font-md)', fontWeight: 300, color: 'var(--color-text-primary)', marginLeft: 4 }}>
                   일 경과
@@ -234,12 +275,18 @@ export default function HomePage() {
                 fontWeight: 500,
                 color: 'var(--color-text-primary)',
                 marginBottom: 'var(--spacing-lg)',
+                userSelect: 'none',
               }}
             >
               치료 정보
             </h3>
 
             <div
+              ref={treatmentScroll.ref}
+              onMouseDown={treatmentScroll.onMouseDown}
+              onMouseMove={treatmentScroll.onMouseMove}
+              onMouseLeave={treatmentScroll.onMouseLeave}
+              onMouseUp={treatmentScroll.onMouseUp}
               style={{
                 display: 'flex',
                 gap: 12,
@@ -250,6 +297,7 @@ export default function HomePage() {
                 WebkitOverflowScrolling: 'touch',
                 touchAction: 'pan-x',  
                 userSelect: 'none',
+                cursor: 'grab',
               }}
             >
               {treatmentItems.map((item) => (
@@ -285,6 +333,7 @@ export default function HomePage() {
                    <Image
                       src={`/${item.id}.jpg`} alt={item.label}
                       fill
+                      draggable="false"
                       style={{ objectFit: 'cover', objectPosition: 'center' }}
                     /> 
                     
@@ -318,6 +367,7 @@ export default function HomePage() {
                   fontSize: 'var(--font-xxl)',
                   fontWeight: 500,
                   color: 'var(--color-text-primary)',
+                  userSelect: 'none',
                 }}
               >
                 매거진
@@ -331,6 +381,7 @@ export default function HomePage() {
                   background: 'none',
                   border: 'none',
                   cursor: 'pointer',
+                  userSelect: 'none',
                 }}
               >
                 더보기
@@ -338,6 +389,11 @@ export default function HomePage() {
             </div>
 
             <div
+              ref={magazineScroll.ref}
+              onMouseDown={magazineScroll.onMouseDown}
+              onMouseMove={magazineScroll.onMouseMove}
+              onMouseLeave={magazineScroll.onMouseLeave}
+              onMouseUp={magazineScroll.onMouseUp}
               style={{
                 display: 'flex',
                 gap: 10,
@@ -345,6 +401,7 @@ export default function HomePage() {
                 paddingBottom: 8,
                 scrollbarWidth: 'none',
                 msOverflowStyle: 'none',
+                cursor: 'grab',
               }}
             >
               {magazineItems.map((item) => (
@@ -354,6 +411,7 @@ export default function HomePage() {
                   role="button"
                   tabIndex={0}
                   onKeyDown={(e) => { if (e.key === 'Enter') router.push('/magazine/' + item.id); }}
+                  draggable="false"
                   style={{
                     flexShrink: 0,
                     width: 200,
@@ -397,10 +455,11 @@ export default function HomePage() {
                     <p
                       style={{
                         fontSize: 'var(--font-md)',
-                        fontWeight: 600,
+                        fontWeight: 500,
                         color: 'var(--color-text-primary)',
                         lineHeight: 1.4,
                         whiteSpace: 'pre-line',
+                        userSelect: 'none'
                       }}
                     >
                       {item.title}
