@@ -131,7 +131,7 @@ export default function Header({
       alignItems: 'center',
       justifyContent: 'center',
       borderRadius: 'var(--radius-full)',
-      background: 'var(--color-primary-bg)',
+      background: /* 'var(--color-primary-bg)' */'none',
       border: 'none',
       cursor: 'pointer',
       padding: 0,
@@ -181,13 +181,13 @@ export default function Header({
         {rightAction}
         {showNotification && (
           <button style={styles.iconButton} aria-label="알림" onClick={handleNotificationClick}>
-            <BellIcon size={22} color="var(--color-text-secondary)" />
+            <BellIcon size={22} color="var(--color-text-primary)" />
             {showUnreadDot && <span style={styles.notificationDot} />}
           </button>
         )}
         {showProfile && (
           <button style={styles.profileButton} aria-label="내 정보" onClick={onProfileClick}>
-            <UserIcon size={20} color="var(--color-primary)" />
+            <UserIcon size={22} color="var(--color-text-primary)" />
           </button>
         )}
       </div>
