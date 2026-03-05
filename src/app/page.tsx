@@ -497,6 +497,7 @@ export default function HomePage() {
             background: 'linear-gradient(135deg, #6192DA 0%, #6192DA 100%)',
             borderRadius: 'var(--radius-lg)',
             padding: '14px 16px',
+            marginBottom:20,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',

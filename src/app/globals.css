@@ -13,7 +13,7 @@
 
   /* 활성/비활성 */
   --color-active: #4A90D9;
-  --color-inactive: #B0BEC5;
+  --color-inactive: #676767;
 
   /* 텍스트 */
   --color-text-primary: #111;
@@ -70,7 +70,7 @@
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
   --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.04);
   --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.06);
-  --shadow-tabbar: 0 -2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-tabbar: 0 -2px 2px rgba(0, 0, 0, 0.04);
 
   /* 레이아웃 */
   --max-width: 430px;

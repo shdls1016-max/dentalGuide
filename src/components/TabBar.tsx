@@ -84,15 +84,15 @@ export default function TabBar() {
     },
     labelActive: {
       fontSize: 'var(--font-xs)',
-      fontWeight: 600,
-      color: 'var(--color-primary)',
-      lineHeight: 1,
+      fontWeight: 400,
+      color: 'var(--color-text-primary)',
+      lineHeight: 1.6,
     },
     labelInactive: {
       fontSize: 'var(--font-xs)',
-      fontWeight: 400,
+      fontWeight: 300,
       color: 'var(--color-inactive)',
-      lineHeight: 1,
+      lineHeight: 1.6,
     },
   };
 
@@ -100,7 +100,7 @@ export default function TabBar() {
     <nav style={styles.nav}>
       {tabs.map((tab) => {
         const active = isActive(tab.href);
-        const iconColor = active ? 'var(--color-primary)' : 'var(--color-inactive)';
+        const iconColor = active ? 'var(--color-text-primary)' : 'var(--color-inactive)';
 
         return (
           <Link
