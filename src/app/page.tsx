@@ -494,7 +494,7 @@ export default function HomePage() {
             transform: 'translateX(-50%)',
             width: 'calc(100% - 40px)',
             maxWidth: 'calc(var(--max-width) - 40px)',
-            background: 'linear-gradient(135deg, #4A90D9 0%, #357ABD 100%)',
+            background: 'linear-gradient(135deg, #6192DA 0%, #6192DA 100%)',
             borderRadius: 'var(--radius-lg)',
             padding: '14px 16px',
             display: 'flex',
@@ -508,24 +508,34 @@ export default function HomePage() {
           {/* Bell icon */}
           <div
             onClick={() => router.push('/appointment')}
-            style={{ display: 'flex', alignItems: 'center', gap: 10, cursor: 'pointer', flex: 1 }}
+            style={{ display: 'flex', alignItems: 'center', gap: 4, cursor: 'pointer', flex: 1, marginLeft:14 }}
             role="button"
             tabIndex={0}
             onKeyDown={(e) => { if (e.key === 'Enter') router.push('/appointment'); }}
           >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+           {/*  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
               <path d="M13.73 21a2 2 0 0 1-3.46 0" />
-            </svg>
+            </svg> */}
             <p
               style={{
-                fontSize: 'var(--font-sm)',
+                fontSize: 'var(--font-title)',
                 color: '#FFFFFF',
-                fontWeight: 500,
+                fontWeight: 400,
                 lineHeight: 1.4,
               }}
             >
-              7일 뒤, 예약한 치과 일정이 있습니다
+              7
+            </p>
+            <p
+              style={{
+                fontSize: 'var(--font-xl)',
+                color: '#FFFFFF',
+                fontWeight: 400,
+                lineHeight: 1.4,
+              }}
+            >
+              일 뒤, 예약한 치과 일정이 있습니다
             </p>
           </div>
 
@@ -539,14 +549,14 @@ export default function HomePage() {
               alignItems: 'center',
               justifyContent: 'center',
               borderRadius: '50%',
-              background: 'rgba(255,255,255,0.2)',
+              /* background: 'rgba(255,255,255,0.2)', */
               border: 'none',
               cursor: 'pointer',
               flexShrink: 0,
             }}
             aria-label="알림 닫기"
           >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <line x1="18" y1="6" x2="6" y2="18" />
               <line x1="6" y1="6" x2="18" y2="18" />
             </svg>
