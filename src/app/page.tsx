@@ -353,7 +353,7 @@ export default function HomePage() {
           </section>
 
           {/* ── Magazine Section ── */}
-          <section style={{ marginTop: 'var(--spacing-xxl3)', marginBottom:'var(--spacing-xxl3)' }}>
+          <section style={{ marginTop: 'var(--spacing-xxl3)', marginBottom:100 }}>
             <div
               style={{
                 display: 'flex',
