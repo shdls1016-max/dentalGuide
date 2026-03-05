@@ -28,19 +28,19 @@ const magazineItems = [
   {
     id: 'm1',
     title: '올바른 양치법,\n이렇게 하세요',
-    color: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    img: '/magazineC1.jpg',
     tag: '구강관리',
   },
   {
     id: 'm2',
     title: '스케일링 주기,\n어떻게 잡을까?',
-    color: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+    img: '/magazineC2.jpg',
     tag: '치료정보',
   },
   {
     id: 'm3',
     title: '치아 미백의\n모든 것',
-    color: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+    img: '/magazineC3.jpg',
     tag: '미용',
   },
 ];
@@ -427,22 +427,31 @@ export default function HomePage() {
                     style={{
                       width: '100%',
                       height: 120,
-                      background: item.color,
                       display: 'flex',
                       alignItems: 'flex-end',
                       justifyContent: 'flex-start',
                       padding: 12,
                       position: 'relative',
+                      overflow:'hidden'
                     }}
                   >
-                    {/* Decorative circle */}
+                    <Image
+                      src={item.img}
+                      alt={item.title}
+                      fill
+                      draggable="false"
+                      style={{ objectFit: 'cover', objectPosition: 'center', userSelect: 'none' }}
+                    />
                    
                     <span
                       style={{
+                        position: 'absolute',
+                        bottom: 10,
+                        left: 10,
                         fontSize: 'var(--font-xs)',
                         fontWeight: 500,
                         color: 'white',
-                        background: 'rgba(0,0,0,0.2)',
+                        background: 'rgba(0,0,0,0.5)',
                         padding: '3px 10px',
                         borderRadius: 'var(--radius-full)',
                       }}
