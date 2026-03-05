@@ -340,9 +340,9 @@ export default function HomePage() {
                   </div>
                   <span
                     style={{
-                      fontSize: 'var(--font-sm)',
-                      fontWeight: 500,
-                      color: 'var(--color-text-secondary)',
+                      fontSize: 'var(--font-md)',
+                      fontWeight: 400,
+                      color: 'var(--color-text-primary)',
                     }}
                   >
                     {item.label}
@@ -464,7 +464,7 @@ export default function HomePage() {
                     <p
                       style={{
                         fontSize: 'var(--font-md)',
-                        fontWeight: 500,
+                        fontWeight: 400,
                         color: 'var(--color-text-primary)',
                         lineHeight: 1.4,
                         whiteSpace: 'pre-line',
